@@ -3,10 +3,13 @@ version: '3.8'
 services:
   postgress:
     image: postgres
+    container_name: telness_postgres #Use this name to pass to db as host
     environment: 
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: telness
       POSTGRES_DB: telness
+      POSTGRES_HOST: telness_postgres
+      POSTGRES_PORT: 5432
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5432:5432"
